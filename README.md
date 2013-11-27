@@ -5,13 +5,13 @@ This Script serves the purpose of cleaning out corrupted databases when needed w
 
 Needs Skin Support.
 
-Takes arguments:
+Takes ARGUMENT:
 
-thumbs >>> cleans Thumbnails Database
-advanced >>> erases AdvancedSettings.xml
-videodb >>> removes Video Database
-musicdb >>> removes Music Database
-packages >>> removes downloaded Zip files (especially useful for low storage devices)
+thumbs : cleans Thumbnails Database
+advanced : erases AdvancedSettings.xml
+videodb : removes Video Database
+musicdb : removes Music Database
+packages : removes downloaded Zip files (especially useful for low storage devices)
 
 syntax
 RunScript(script.clean.up,ARGUMENT)
