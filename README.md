@@ -8,9 +8,13 @@ Needs Skin Support.
 Takes ARGUMENT:
 
 thumbs : cleans Thumbnails Database
+
 advanced : erases AdvancedSettings.xml
+
 videodb : removes Video Database
+
 musicdb : removes Music Database
+
 packages : removes downloaded Zip files (especially useful for low storage devices)
 
 syntax
