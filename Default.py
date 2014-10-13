@@ -26,14 +26,19 @@ import urllib
 import shutil
 import glob, os
 
+__addon__     = xbmcaddon.Addon()
+__addonid__   = __addon__.getAddonInfo('id')
+__language__  = __addon__.getLocalizedString
+
+
 dialog = xbmcgui.Dialog()
-localtxt2 = xbmc.getLocalizedString(31073)
-localtxt3 = xbmc.getLocalizedString(31074)
+localtxt2 = __language__(32007)
+localtxt3 = __language__(32008)
 prnum= sys.argv[ 1 ]
 
 def packages():
     
-    localtxt1 = xbmc.getLocalizedString(31067)
+    localtxt1 = __language__(31067)
     
     destpath=xbmc.translatePath(os.path.join('special://home/addons/packages',''))
 
@@ -47,7 +52,7 @@ def packages():
 
 def musicdb():
     
-    localtxt1 = xbmc.getLocalizedString(31085)
+    localtxt1 = __language__(31085)
     path = xbmc.translatePath(os.path.join('special://home/userdata/Database',''))
 
 
@@ -69,7 +74,7 @@ def musicdb():
 
 def videodb():
 
-    localtxt1 = xbmc.getLocalizedString(31084)
+    localtxt1 = __language__(31084)
     path = xbmc.translatePath(os.path.join('special://home/userdata/Database',''))
 
     if dialog.yesno(localtxt1, localtxt3):
@@ -90,7 +95,7 @@ def videodb():
 
 def thumbs():
     
-    localtxt1 = xbmc.getLocalizedString(31066)
+    localtxt1 = __language__(31066)
 
     thumbnails=xbmc.translatePath(os.path.join('special://home/userdata/Thumbnails',''))
     thumbdatabase=xbmc.translatePath(os.path.join('special://home/userdata/Database',''))
@@ -122,7 +127,7 @@ def thumbs():
 
 def advanced():
 
-    localtxt1 = xbmc.getLocalizedString(31080)
+    localtxt1 = __language__(31080)
 
 
     dialog = xbmcgui.Dialog()

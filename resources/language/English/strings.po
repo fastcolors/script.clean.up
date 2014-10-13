@@ -1,0 +1,59 @@
+# XBMC Media Center language file
+# Addon Name: Clean Up
+# Addon id: service.clean.up
+# Addon Provider: fastcolors
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: XBMC Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#32000"
+msgid "Delete Cache"
+msgstr "Delete Cache"
+
+msgctxt "#32001"
+msgid "Delete Thumbnails"
+msgstr "Delete Thumbnails"
+
+msgctxt "#32002"
+msgid "Remove Downloaded Zip Packages"
+msgstr "Remove Downloaded Zip Packages"
+
+msgctxt "#32003"
+msgid "Delete AdvancedSettings"
+msgstr "Delete AdvancedSettings"
+
+msgctxt "#32004"
+msgid "Remove Video Database"
+msgstr "Remove Video Database"
+
+msgctxt "#32005"
+msgid "Remove Music Database"
+msgstr "Remove Music Database"
+
+msgctxt "#32006"
+msgid "[COLOR FFFF0000]USE THESE TOOLS ONLY IF YOU KNOW WHAT YOU'RE DOING AND AT YOUR OWN RISK!!![/COLOR] WE DON'T TAKE ANY RESPONSABILITY FOR THE POSSIBLE OUTCOME. [COLOR FFFF0000]MAY RESULT IN THE MALFUNCTIONING OF XBMC.[/COLOR][CR] [CR]PROUDLY BROUGHT TO YOU BY MIKEY1234 and FASTCOLORS."
+msgstr "[COLOR FFFF0000]USE THESE TOOLS ONLY IF YOU KNOW WHAT YOU'RE DOING AND AT YOUR OWN RISK!!![/COLOR] WE DON'T TAKE ANY RESPONSABILITY FOR THE POSSIBLE OUTCOME. [COLOR FFFF0000]MAY RESULT IN THE MALFUNCTIONING OF XBMC.[/COLOR][CR] [CR]PROUDLY BROUGHT TO YOU BY MIKEY1234 and FASTCOLORS."
+
+msgctxt "#32007"
+msgid "All Done."
+msgstr "All Done."
+
+msgctxt "#32008"
+msgid "Are You Sure?"
+msgstr "Are You Sure?"
+
+msgctxt "#32009"
+msgid "Maintenance Tools"
+msgstr "Maintenance Tools"
+
+
