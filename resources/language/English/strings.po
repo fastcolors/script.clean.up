@@ -56,4 +56,6 @@ msgctxt "#32009"
 msgid "Maintenance Tools"
 msgstr "Maintenance Tools"
 
-
+msgctxt "#32010"
+msgid "Advanced Maintenance Tools, used to clean up after XBMC. Or to fix some annoying issues. To be used carefully.[CR][CR]Brought to You by Mikey1234 and Fastcolors."
+msgstr "Advanced Maintenance Tools, used to clean up after XBMC. Or to fix some annoying issues. To be used carefully.[CR][CR]Brought to You by Mikey1234 and Fastcolors."
