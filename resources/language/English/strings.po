@@ -59,3 +59,7 @@ msgstr "Maintenance Tools"
 msgctxt "#32010"
 msgid "Advanced Maintenance Tools, used to clean up after XBMC. Or to fix some annoying issues. To be used carefully.[CR][CR]Brought to You by Mikey1234 and Fastcolors."
 msgstr "Advanced Maintenance Tools, used to clean up after XBMC. Or to fix some annoying issues. To be used carefully.[CR][CR]Brought to You by Mikey1234 and Fastcolors."
+
+msgctxt "#32011"
+msgid "Remove Views Database"
+msgstr "Remove Views Database"

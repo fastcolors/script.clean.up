@@ -38,7 +38,7 @@ prnum= sys.argv[ 1 ]
 
 def packages():
     
-    localtxt1 = __language__(31067)
+    localtxt1 = __language__(32002)
     
     destpath=xbmc.translatePath(os.path.join('special://home/addons/packages',''))
 
@@ -52,7 +52,7 @@ def packages():
 
 def musicdb():
     
-    localtxt1 = __language__(31085)
+    localtxt1 = __language__(32005)
     path = xbmc.translatePath(os.path.join('special://home/userdata/Database',''))
 
 
@@ -74,7 +74,7 @@ def musicdb():
 
 def videodb():
 
-    localtxt1 = __language__(31084)
+    localtxt1 = __language__(32004)
     path = xbmc.translatePath(os.path.join('special://home/userdata/Database',''))
 
     if dialog.yesno(localtxt1, localtxt3):
@@ -95,7 +95,7 @@ def videodb():
 
 def thumbs():
     
-    localtxt1 = __language__(31066)
+    localtxt1 = __language__(32001)
 
     thumbnails=xbmc.translatePath(os.path.join('special://home/userdata/Thumbnails',''))
     thumbdatabase=xbmc.translatePath(os.path.join('special://home/userdata/Database',''))
@@ -127,11 +127,11 @@ def thumbs():
 
 def advanced():
 
-    localtxt1 = __language__(31080)
+    localtxt1 = __language__(32003)
 
 
     dialog = xbmcgui.Dialog()
-    if dialog.yesno("", localtxt1):
+    if dialog.yesno(localtxt1, localtxt3):
       path = xbmc.translatePath(os.path.join('special://home/userdata',''))
       advance=os.path.join(path, 'advancedsettings.xml')
       try:
@@ -139,7 +139,31 @@ def advanced():
           xbmc.executebuiltin("Notification(,"+localtxt2+")")
       except:
           xbmc.executebuiltin("Notification(,File doesn't exists)")
-          
+
+
+#-------------------
+
+
+def viewsdb():
+
+    localtxt1 = __language__(32011)
+
+    if dialog.yesno(localtxt1, localtxt3):
+        database = os.path.join(path, 'Database/ViewModes*.db')
+        print database
+        filelist = glob.glob(database)
+        print filelist
+        if filelist != []:
+            for f in filelist:
+                print f
+                os.remove(f)
+            xbmc.executebuiltin("Notification("+localtxt2+",Restart Kodi)")
+        else:
+            print 'merdaa'
+            xbmc.executebuiltin("Notification(Error,File doesn't exists)")
+
+#-------------------
+
 
 if prnum == 'packages':
     packages()
@@ -155,6 +179,9 @@ elif prnum == 'thumbs':
 
 elif prnum == 'advanced':
     advanced()
+
+elif prnum == 'videoviews':
+    viewsdb()
     
 else:
     print '-------------------------INVALID ARGUMENT'
