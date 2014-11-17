@@ -34,41 +34,45 @@ __language__  = __addon__.getLocalizedString
 dialog = xbmcgui.Dialog()
 localtxt2 = __language__(32007)
 localtxt3 = __language__(32008)
-prnum= sys.argv[ 1 ]
+prnum=""
+try:
+    prnum= sys.argv[ 1 ]
+except:
+    pass
 
 def packages():
-    
+
     localtxt1 = __language__(32002)
-    
+
     destpath=xbmc.translatePath(os.path.join('special://home/addons/packages',''))
 
     if dialog.yesno(localtxt1, localtxt3):
-      shutil.rmtree(destpath)
-      os.mkdir(destpath)
+        shutil.rmtree(destpath)
+        os.mkdir(destpath)
 
-      xbmc.executebuiltin("Notification(,"+localtxt2+")")
+        xbmc.executebuiltin("Notification(,"+localtxt2+")")
 
 #-------------------
 
 def musicdb():
-    
+
     localtxt1 = __language__(32005)
     path = xbmc.translatePath(os.path.join('special://home/userdata/Database',''))
 
 
     if dialog.yesno(localtxt1, localtxt3):
-      database = os.path.join(path, 'MyMusic*.db')
-      print database
-      filelist = glob.glob(database)
-      print filelist
-      if filelist != []:
-        for f in filelist:
-          print f
-          os.remove(f)
-          xbmc.executebuiltin("Notification(,"+localtxt2+")")
-      else:
-        print 'merdaa'
-        xbmc.executebuiltin("Notification(,File doesn't exists)")
+        database = os.path.join(path, 'MyMusic*.db')
+        print database
+        filelist = glob.glob(database)
+        print filelist
+        if filelist != []:
+            for f in filelist:
+                print f
+                os.remove(f)
+                xbmc.executebuiltin("Notification(,"+localtxt2+")")
+        else:
+            print 'merdaa'
+            xbmc.executebuiltin("Notification(,File doesn't exists)")
 
 #-------------------
 
@@ -78,51 +82,51 @@ def videodb():
     path = xbmc.translatePath(os.path.join('special://home/userdata/Database',''))
 
     if dialog.yesno(localtxt1, localtxt3):
-      database = os.path.join(path, 'MyVideos*.db')
-      print database
-      filelist = glob.glob(database)
-      print filelist
-      if filelist != []:
-        for f in filelist:
-          print f
-          os.remove(f)
-          xbmc.executebuiltin("Notification(,"+localtxt2+")")
-      else:
-        print 'merdaa'
-        xbmc.executebuiltin("Notification(,File doesn't exists)")
+        database = os.path.join(path, 'MyVideos*.db')
+        print database
+        filelist = glob.glob(database)
+        print filelist
+        if filelist != []:
+            for f in filelist:
+                print f
+                os.remove(f)
+                xbmc.executebuiltin("Notification(,"+localtxt2+")")
+        else:
+            print 'merdaa'
+            xbmc.executebuiltin("Notification(,File doesn't exists)")
 
 #-------------------
 
 def thumbs():
-    
+
     localtxt1 = __language__(32001)
 
     thumbnails=xbmc.translatePath(os.path.join('special://home/userdata/Thumbnails',''))
     thumbdatabase=xbmc.translatePath(os.path.join('special://home/userdata/Database',''))
-    
+
     dialog = xbmcgui.Dialog()
     if dialog.yesno(localtxt1, localtxt3):
-      shutil.rmtree(thumbnails)
-      os.mkdir(thumbnails)
-      import glob
-      for db in glob.glob(os.path.join(thumbdatabase, 'Textures*.*')):
-        from sqlite3 import dbapi2 as sqlite3
-        try:
-          db   = xbmc.translatePath(db)
-          conn = sqlite3.connect(db, timeout = 10, detect_types=sqlite3.PARSE_DECLTYPES, check_same_thread = False)
-          c    = conn.cursor()
+        shutil.rmtree(thumbnails)
+        os.mkdir(thumbnails)
+        import glob
+        for db in glob.glob(os.path.join(thumbdatabase, 'Textures*.*')):
+            from sqlite3 import dbapi2 as sqlite3
+            try:
+                db   = xbmc.translatePath(db)
+                conn = sqlite3.connect(db, timeout = 10, detect_types=sqlite3.PARSE_DECLTYPES, check_same_thread = False)
+                c    = conn.cursor()
 
-          c.execute("DELETE FROM texture WHERE id > 0")       
-          c.execute("VACUUM")       
+                c.execute("DELETE FROM texture WHERE id > 0")
+                c.execute("VACUUM")
 
-          conn.commit()
-          c.close()
-        except:
-          pass
-          
-      xbmc.executebuiltin("Notification(,"+localtxt2+")")
+                conn.commit()
+                c.close()
+            except:
+                pass
 
-      
+        xbmc.executebuiltin("Notification(,"+localtxt2+")")
+
+
 #-------------------
 
 def advanced():
@@ -132,13 +136,13 @@ def advanced():
 
     dialog = xbmcgui.Dialog()
     if dialog.yesno(localtxt1, localtxt3):
-      path = xbmc.translatePath(os.path.join('special://home/userdata',''))
-      advance=os.path.join(path, 'advancedsettings.xml')
-      try:
-          os.remove(advance)
-          xbmc.executebuiltin("Notification(,"+localtxt2+")")
-      except:
-          xbmc.executebuiltin("Notification(,File doesn't exists)")
+        path = xbmc.translatePath(os.path.join('special://home/userdata',''))
+        advance=os.path.join(path, 'advancedsettings.xml')
+        try:
+            os.remove(advance)
+            xbmc.executebuiltin("Notification(,"+localtxt2+")")
+        except:
+            xbmc.executebuiltin("Notification(,File doesn't exists)")
 
 
 #-------------------
@@ -164,13 +168,18 @@ def viewsdb():
 
 #-------------------
 
+def notify(header="", message="", icon=xbmcgui.NOTIFICATION_INFO, time=5000, sound=True):
+    dialog = xbmcgui.Dialog()
+    dialog.notification(heading="Service Clean Up", message="This Addon needs arguments to run", icon=icon, time=time, sound=sound)
+
+#-------------------
 
 if prnum == 'packages':
     packages()
 
 elif prnum == 'videodb':
     videodb()
-    
+
 elif prnum == 'musicdb':
     musicdb()
 
@@ -182,10 +191,9 @@ elif prnum == 'advanced':
 
 elif prnum == 'videoviews':
     viewsdb()
-    
+
+elif prnum == "":
+    notify()
+
 else:
-    print '-------------------------INVALID ARGUMENT'
-    print '-------------------------INVALID ARGUMENT'
-    print prnum
-    print '-------------------------INVALID ARGUMENT'
-    print '-------------------------INVALID ARGUMENT'
+    print 'INVALID ARGUMENT'
